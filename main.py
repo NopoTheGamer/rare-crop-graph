@@ -3,8 +3,10 @@ import pandas as pd
 import matplotlib.pyplot as plt
 from datetime import datetime
 
-with open("alldata.json", 'r') as file:
+with open("config.json", 'r', encoding="UTF-8") as file:
     data = json.load(file)
+
+data = data["rareCrop"]
 
 times = [
     (1777784100000, 1777821300000), # Sugar Cane, Cocoa Beans, Moonflower
@@ -12,7 +14,9 @@ times = [
     (1777858500000, 1777895700000), # Cactus, Mushroom, Sunflower
     (1777895700000, 1777932900000), # Sugar Cane, Moonflower, Cocoa Beans
     (1777932900000, 1777970100000), # Wheat, Pumpkin, Melon
-    (1777970100000, 1778007300000), # Wildrose, To be determined, to be determined
+    (1777970100000, 1778007300000), # Carrot, Mushroom, Sunflower
+    (1778007300000, 1778044500000), # Wart, Sugar Cane, Cocoa Beans
+    (1778044500000, 1778044500000), # Potato, Wildrose, Moonflower
 ]
 
 # do "del data["dropTimes"]["Drop Name"]" to hide that drop from the graph
@@ -20,6 +24,7 @@ times = [
 # del data["dropTimes"]["Fermento"]
 # del data["dropTimes"]["Helianthus"]
 # del data["dropTimes"]["Seasoning"]
+# del data["dropTimes"]["Epic Slug"]
 del data["dropTimes"]["Ethereal Vine"]
 
 
